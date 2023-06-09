@@ -1,0 +1,6 @@
+Title: Parse Domain from URL
+description: Parse a domain using PowerQuery from a URL
+PowerQuery: event.category = 'url'
+| columns url.address
+| parse "\\/\\/$domain$\\/" from url.address
+| group count(domain) by domain   
